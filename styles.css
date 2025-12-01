@@ -1,154 +1,27 @@
-:root {
-  --primary: #ae7c82;         /* dusty rose / mauve for header, headings, accents */
-  --secondary: #f6f1ec;       /* off-white background (unchanged, soft and inviting) */
-  --accent: #f1e7dc;          /* warm sand/tan (gentle highlight and section background) */
-  --highlight: #eed6c4;       /* sand/light ochre highlight */
-  --border: #e2ccc3;          /* sandy-tan border */
-  --text: #635c55;            /* muted deep taupe, approachable and soft */
-  --bubble-stone: #ebe8e3;    /* stone/greige for selected bubbles */
-}
+/* ...your existing styles above... */
 
-html {
-  scroll-behavior: smooth;
-}
-body {
-  font-family: 'Roboto', Arial, sans-serif;
-  background: var(--secondary);
-  color: var(--text);
-  margin: 0;
-}
-.container {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 1.2em;
-}
-.header {
-  background: var(--primary);
-  color: #fff;
-  padding: 2em 0 1em 0;
-}
-.header-content {
-  display: flex;
-  align-items: center;
-  gap: 1.5em;
-}
+/* Add this for the .profile-pic-wrapper for the subtle glow effect */
 .profile-pic-wrapper {
-  min-width: 110px;
-  max-width: 120px;
-  border-radius: 60px;
-  background: var(--accent);
-  box-shadow: 0 6px 18px rgba(172, 124, 130, 0.08);
-  overflow: hidden;
+  background: rgba(255, 255, 255, 0.55); /* Soft white background with slight opacity */
+  border-radius: 14px;                   /* Gentle rounded corners */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.09); /* Soft outer shadow for subtle glow */
+  padding: 10px;                         /* Padding for breathing room */
+  display: inline-block;                 /* Keeps bubble tight around image */
 }
+
+/* Soften and brighten the profile picture itself */
 .profile-pic {
-  width: 100%;
-  border-radius: 60px;
-  object-fit: cover;
-}
-.main-title {
-  font-size: 2em;
-  margin: 0;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-.subtitle {
-  font-weight: 400;
-  margin-top: 0.2em;
-  font-size: 1.08em;
-  color: var(--highlight);
-}
-.section {
-  margin: 2em 0 2.5em 0;
-}
-.section-box {
-  background: #fff;
-  border-radius: 18px;
-  padding: 1.5em 1.3em 1.2em 1.3em;
-  box-shadow: 0 6px 36px rgba(172, 124, 130, 0.07);
-  border: 1.4px solid var(--border);
-}
-.section h3 {
-  color: var(--primary);
-  margin-top: 0;
-}
-.section ul {
-  margin: 0 0 0.5em 1.2em;
-  padding: 0;
-}
-.section li {
-  margin-bottom: 0.35em;
-  line-height: 1.5em;
-}
-.bold, b {
-  font-weight: 700;
-  color: var(--primary);
-}
-.calendar-wrapper {
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  margin-top: 1em;
-  background: var(--accent);
+  filter: blur(1.2px) brightness(1.08) contrast(0.96) saturate(0.96);
+  border-radius: 10px;
+  transition: filter 0.3s;
+  max-width: 225px; /* Adjust as needed for your layout */
+  height: auto;
 }
 
-/* Calendars Side by Side (Horizontally) */
-.calendars-row-horizontal {
-  display: flex;
-  gap: 2em;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+/* Optional: Soften further on hover for interactivity 
+.profile-pic:hover {
+  filter: blur(1.6px) brightness(1.15) contrast(0.93) saturate(1);
 }
-.calendar-block {
-  flex: 1 1 0;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-.calendar-block h4 {
-  margin-top: 0;
-  color: var(--primary);
-}
-.calendar-wrapper {
-  min-height: 520px;
-  /* You can adjust max-height as needed, or set a fixed height */
-}
+*/
 
-/* Responsive: Stack vertically on mobile */
-@media (max-width: 1100px) {
-  .calendars-row-horizontal {
-    flex-direction: column;
-    gap: 1.5em;
-  }
-  .calendar-block {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 900px) {
-  .header-content {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1em;
-  }
-}
-
-@media (max-width: 600px) {
-  .container {
-    padding: 0.4em;
-  }
-  .section-box {
-    padding: 1em 0.7em;
-  }
-  .main-title { font-size: 1.3em;}
-  .footer { font-size: 0.95em;}
-}
-
-.footer {
-  background: var(--primary);
-  color: #fff;
-  text-align: center;
-  padding: 0.8em 0;
-  font-size: 1em;
-  margin-top: 3em;
-}
+/* ...rest of your styles below... */
