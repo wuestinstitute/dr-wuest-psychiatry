@@ -1,11 +1,11 @@
 :root {
-  --primary: #ae7c82;         /* dusty rose / mauve for header, headings, accents */
-  --secondary: #f6f1ec;       /* off-white background (unchanged, soft and inviting) */
-  --accent: #f1e7dc;          /* warm sand/tan (gentle highlight and section background) */
-  --highlight: #eed6c4;       /* sand/light ochre highlight */
-  --border: #e2ccc3;          /* sandy-tan border */
-  --text: #635c55;            /* muted deep taupe, approachable and soft */
-  --bubble-stone: #ebe8e3;    /* stone/greige for selected bubbles */
+  --primary: #ae7c82;
+  --secondary: #f6f1ec;
+  --accent: #f1e7dc;
+  --highlight: #eed6c4;
+  --border: #e2ccc3;
+  --text: #635c55;
+  --bubble-stone: #ebe8e3;
 }
 
 html {
@@ -111,10 +111,25 @@ body {
 }
 .calendar-wrapper {
   min-height: 520px;
-  /* You can adjust max-height as needed, or set a fixed height */
 }
 
-/* Responsive: Stack vertically on mobile */
+/* NEW: Two-column responsive layout for content sections */
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Ensure section boxes stretch within grid */
+.section-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive: Stack calendars vertically on smaller screens */
 @media (max-width: 1100px) {
   .calendars-row-horizontal {
     flex-direction: column;
@@ -140,8 +155,8 @@ body {
   .section-box {
     padding: 1em 0.7em;
   }
-  .main-title { font-size: 1.3em;}
-  .footer { font-size: 0.95em;}
+  .main-title { font-size: 1.3em; }
+  .footer { font-size: 0.95em; }
 }
 
 .footer {
