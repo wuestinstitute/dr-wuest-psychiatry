@@ -1,4 +1,122 @@
+:root {
+  --primary: #ae7c82;         /* dusty rose / mauve for header, headings, accents */
+  --secondary: #f6f1ec;       /* off-white background (unchanged, soft and inviting) */
+  --accent: #f1e7dc;          /* warm sand/tan (gentle highlight and section background) */
+  --highlight: #eed6c4;       /* sand/light ochre highlight */
+  --border: #e2ccc3;          /* sandy-tan border */
+  --text: #635c55;            /* muted deep taupe, approachable and soft */
+  --bubble-stone: #ebe8e3;    /* stone/greige for selected bubbles */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background: var(--secondary);
+  color: var(--text);
+  margin: 0;
+}
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.2em;
+}
+.header {
+  background: var(--primary);
+  color: #fff;
+  padding: 2em 0 1em 0;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+.profile-pic-wrapper {
+  min-width: 110px;
+  max-width: 120px;
+  border-radius: 60px;
+  background: var(--accent);
+  box-shadow: 0 6px 18px rgba(172, 124, 130, 0.08);
+  overflow: hidden;
+}
+.profile-pic {
+  width: 100%;
+  border-radius: 60px;
+  object-fit: cover;
+}
+.main-title {
+  font-size: 2em;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.subtitle {
+  font-weight: 400;
+  margin-top: 0.2em;
+  font-size: 1.08em;
+  color: var(--highlight);
+}
+.section {
+  margin: 2em 0 2.5em 0;
+}
+.section-box {
+  background: #fff;
+  border-radius: 18px;
+  padding: 1.5em 1.3em 1.2em 1.3em;
+  box-shadow: 0 6px 36px rgba(172, 124, 130, 0.07);
+  border: 1.4px solid var(--border);
+}
+.section h3 {
+  color: var(--primary);
+  margin-top: 0;
+}
+.section ul {
+  margin: 0 0 0.5em 1.2em;
+  padding: 0;
+}
+.section li {
+  margin-bottom: 0.35em;
+  line-height: 1.5em;
+}
+.bold, b {
+  font-weight: 700;
+  color: var(--primary);
+}
+.calendar-wrapper {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 1em;
+  background: var(--accent);
+}
+
+/* Calendars Stacked Vertically */
 .calendars-row-horizontal {
-  flex-wrap: wrap;
+  display: flex;
   flex-direction: column;
+  gap: 2em;
+}
+.calendar-block {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.calendar-block h4 {
+  margin: 0 0 0.5em 0;
+  color: var(--primary);
+}
+
+.footer {
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 1.5em 0;
+  margin-top: 3em;
+}
+.footer p {
+  margin: 0;
+  font-size: 0.95em;
 }
